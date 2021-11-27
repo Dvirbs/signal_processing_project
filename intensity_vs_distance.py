@@ -1,6 +1,8 @@
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# curve-fit() function imported from scipy
+from scipy.optimize import curve_fit
+from matplotlib import pyplot as plt
+import pandas as pd
 
 
 def saving_data(sheet_name):
@@ -69,18 +71,10 @@ def plot():
     x = max_voltage_list()[0]
     # corresponding y axis values
     y = max_voltage_list()[1]
-    # plotting the points
     plt.plot(x, y, color='green', linestyle='dashed', linewidth=3,
              marker='o', markerfacecolor='blue', markersize=8)
-    # matplotlib.pyplot.errorbar(x, y, yerr=None, xerr=None, fmt='', ecolor=None, elinewidth=None, capsize=None,
-    #                            barsabove=False, lolims=False, uplims=False, xlolims=False, xuplims=False, errorevery=1,
-    #                            capthick=None, data=None, **kwargs)
-    # naming the x axis
-    plt.xlabel('Time - axis')
-    # naming the y axis
+    plt.xlabel('Distance - axis')
     plt.ylabel('Voltage - axis')
-
-    # giving a title to my graph
     plt.title('Intensity vs Distance- sin_1000hz')
 
     # function to show the plot
@@ -90,4 +84,4 @@ def plot():
 #    plt.savefig('Intensity vs Distance- sin_1000hz')
 
 
-plot()
+#plot()
